@@ -47,7 +47,9 @@ class BaseDatePaginatedPlatformPurpleStream(BasePlatformPurpleStream):
         else:
             start_date = start_date.replace(tzinfo=pytz.UTC)
 
-        end_date = start_date + datetime.timedelta(hours=1)
+        td = datetime.timedelta(hours=1)
+
+        end_date = start_date + td
 
         while not done:
             max_date = start_date
@@ -94,6 +96,6 @@ class BaseDatePaginatedPlatformPurpleStream(BasePlatformPurpleStream):
                 LOGGER.info("Advancing by one page.")
                 start_date = max_date
 
-            end_date = start_date + datetime.timedelta(hours=1)
+            end_date = start_date + td
 
             save_state(self.state)

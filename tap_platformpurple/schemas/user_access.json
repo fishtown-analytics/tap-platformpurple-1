@@ -2,7 +2,7 @@
   "type": "object",
   "properties": {
     "userEmail": {
-      "type": "string"
+      "type": ["string", "null"]
     },
     "productID": {
       "type": "string"
